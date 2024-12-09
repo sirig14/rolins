@@ -3,7 +3,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "/password/login"; // Ajusta el import según la ubicación real del archivo
-
+import "./home.css"
 
 const Page = () => {
   return (
@@ -31,25 +31,21 @@ const Page = () => {
       </div>
 
       {/* Barra de navegación */}
-      <div
+      <div className="NavBar-Blue"
         style={{
           display: "flex",
-          justifyContent: "normal",
+          justifyContent: "space-between",
           alignItems: "center",
-          padding: "10px 20px",
-          backgroundColor: "#007BFF",
           borderBottom: "1px solid #ddd",
           position: "sticky",
           top: 0,
           zIndex: 1000,
-          width: "100%", // Asegura que la barra ocupe todo el ancho
+          width: "100%", 
           boxSizing: "border-box",
         }}
       >
-     
-
-        {/* Contenedor de botones a la derecha */}
-        <div style={{ display: "flex", gap: "10px" }}>
+    
+        <div style={{ display: "flex", gap: "" }}>
           <button
             style={{
               padding: "10px 20px",

@@ -25,7 +25,7 @@ const Page = () => {
         />
         {/* Texto centrado */}
         <div style={{ flex: 1, textAlign: "center" }}>
-          Contactanos al 800 900 700
+          Contactanos al 📞 800 900 700
         </div>
   
       </div>
@@ -130,4 +130,6 @@ const Page = () => {
 };
 
 export default Page;
+
+
 

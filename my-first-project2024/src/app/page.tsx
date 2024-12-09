@@ -1,163 +1,48 @@
-"use client" ;
-
-import React, { useState } from "react";
-import "./home.css";
+"use client";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-const Page = () => {
-  // Estado para manejar la sección activa
-  const [activeSection, setActiveSection] = useState("home");
+import Login from "/password/login"; // Ajusta el import según la ubicación real del archivo
 
-  // Función para cambiar la sección activa
-  const showContent = (sectionId) => {
-    setActiveSection(sectionId);
-  };
-
+const LoginPage = () => {
   return (
-    <div style={{ fontFamily: "Arial, sans-serif", margin: 0, padding: 0 }}>
-      {/* Barra superior adicional */}
-      <div
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+        backgroundColor: "#f0f4f8",
+        fontFamily: "'Arial', sans-serif",
+      }}
+    >
+      <h1
         style={{
-          backgroundColor: "#FFA500", // Color de fondo para la nueva barra
-          color: "#fff", // Texto en blanco
-          padding: "10px 20px", // Espaciado interno
-          textAlign: "center", // Centrar el texto en la barra
-          fontSize: "16px", // Tamaño de fuente
+          color: "#333",
+          fontSize: "2.5rem",
+          marginBottom: "20px",
         }}
       >
-       <img
-          src= "/icono.jpg"
-          alt="Logo"
-          style={{ height: "40px", width: "auto" }} // Ajusta el tamaño de la imagen
-        />
-        {/* Texto centrado */}
-        <div style={{ flex: 1, textAlign: "center" }}>
-          Contactanos al 800 900 700
-        </div>
-  
-      </div>
-
-      {/* Barra de navegación */}
-      <div className="NavBar-Blue"
+        Bienvenido A Faivil
+      </h1>
+      <p>ingrese sus datos</p>
+      <button
         style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          borderBottom: "1px solid #ddd",
-          position: "sticky",
-          top: 0,
-          zIndex: 1000,
-          width: "100%", 
-          boxSizing: "border-box",
+          padding: "15px 30px",
+          fontSize: "1.2rem",
+          color: "#fff",
+          backgroundColor: "#007BFF",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer",
+          boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
         }}
+        onClick={() => (window.location.href = "/password/login")}
       >
-    
-        <div style={{ display: "flex", gap: "" }}>
-          <button
-            style={{
-              padding: "10px 20px",
-              backgroundColor: "#007BFF",
-              color: "#fff",
-              border: "none",
-              borderRadius: "5px",
-              cursor: "pointer",
-            }}
-            onClick={() => showContent("vih")}
-          >
-            Todo sobre el VIH
-          </button>
-          <button
-            style={{
-              padding: "10px 20px",
-              backgroundColor: "#007BFF",
-              color: "#fff",
-              border: "none",
-              borderRadius: "5px",
-              cursor: "pointer",
-            }}
-            onClick={() => showContent("programas")}
-          >
-            Programas y servicios
-          </button>
-          <button
-            style={{
-              padding: "10px 20px",
-              backgroundColor: "#007BFF",
-              color: "#fff",
-              border: "none",
-              borderRadius: "5px",
-              cursor: "pointer",
-            }}
-            onClick={() => showContent("quienes")}
-          >
-            Quienes Somos
-          </button>
-          <button
-          style={{
-          padding: "10px 20px",
-          backgroundColor: "#007BFF",
-          color: "#fff",
-         border: "none",
-         borderRadius: "5px",
-         cursor: "pointer",
-        }}
-        onClick={() =>
-           (window.location.href = "/password/login")
-        }
-         >
-           Ingreso
-        </button>
-        <button
-          style={{
-          padding: "10px 20px",
-          backgroundColor: "#007BFF",
-          color: "#fff",
-         border: "none",
-         borderRadius: "5px",
-         cursor: "pointer",
-        }}
-        onClick={() =>
-           (window.location.href = "/password/signup")
-        }
-         >
-           Registro
-        </button>
-  
-        </div>
-      </div>
-
-      
-     {/* Contenido dinámico */}
-     <div style={{ padding: "20px", maxWidth: "1200px", margin: "0 auto", textAlign: "center" }}>
-        {activeSection === "vih" && (
-          <div>
-            <h1>Todo sobre el VIH</h1>
-            <p>Información completa sobre el VIH.</p>
-          </div>
-        )}
-        {activeSection === "programas" && (
-          <div>
-            <h1>Programas y servicios</h1>
-            <p>Detalles de programas y servicios ofrecidos.</p>
-          </div>
-        )}
-        {activeSection === "quienes" && (
-          <div>
-            <h1>Quienes Somos</h1>
-            <p>Información sobre nuestra organización.</p>
-          </div>
-        )}
-        {activeSection === "home" && (
-          <div>
-            <h1>Reserva tu cita</h1>
-            <p>Bienvenido al sistema de reservas.</p>
-          </div>
-        )}
-      </div>
+        Login
+      </button>
     </div>
   );
 };
 
-export default Page;
-
-
-
+export default LoginPage;

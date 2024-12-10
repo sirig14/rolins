@@ -20,5 +20,6 @@ export default async function handler(
   if (!isValidPassword) {
     return res.status(400).json({ message: "Invalid credentials" });
   }
-  return res.status(200).json({ message: "Login successful" });
+  return res.redirect(302,"/pagina")
+  
 }

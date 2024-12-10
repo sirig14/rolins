@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import "./home.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-const Page = () => {
+const Pagina = () => {
   // Estado para manejar la sección activa
   const [activeSection, setActiveSection] = useState("home");
 
@@ -153,7 +153,7 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default Pagina;
 
 
 

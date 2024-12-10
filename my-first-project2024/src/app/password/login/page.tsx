@@ -1,8 +1,7 @@
 "use client";
-import { useState } from "react";
+import {useEffect, useState } from "react";
 import AuthForm from "../../../components/AuthForm";
 import Link from "next/link";
-
 const Login: React.FC = () => {
   const [message, setMessage] = useState("");
   const [isSuccessful, setIsSuccessful] = useState(false);

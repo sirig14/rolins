@@ -27,7 +27,7 @@ const Login: React.FC = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
       <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md w-full max-w-md">
-        {isSuccessful ? (
+        {isSuccessful ? ( 
           <p className="text-green-500 text-center text-lg font-semibold">
             Welcome!
           </p>
@@ -41,6 +41,10 @@ const Login: React.FC = () => {
             </Link>
           </>
         )}
+        
+        <div className="text-white"> 
+          {isSuccessful && (window.location.href = "/pagina")}</div>
+
         {message && (
           <p
             className={`text-center mt-4 ${
@@ -50,8 +54,11 @@ const Login: React.FC = () => {
             {message}
           </p>
         )}
+
       </div>
     </div>
+    
+    
   );
 };
 

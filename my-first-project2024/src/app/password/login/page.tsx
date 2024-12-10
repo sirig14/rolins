@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { use, useEffect, useState } from "react";
 import AuthForm from "../../../components/AuthForm";
 import Link from "next/link";
 
@@ -9,6 +9,10 @@ const Login: React.FC = () => {
   const [isSuccess, setIsSuccess] = useState(false);
 
   const handleLogin = async (data: { email: string; password: string }) => {
+    const [email] = useState([]);
+    useEffect(() => {
+      localStorage.setItem("email", JSON.stringify(email));
+    }, [email]);
     const res = await fetch("/api/auth/password/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },

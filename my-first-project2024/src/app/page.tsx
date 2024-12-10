@@ -1,163 +1,100 @@
-"use client" ;
-
-import React, { useState } from "react";
-import "./home.css";
+"use client";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-const Page = () => {
-  // Estado para manejar la sección activa
-  const [activeSection, setActiveSection] = useState("home");
-
-  // Función para cambiar la sección activa
-  const showContent = (sectionId) => {
-    setActiveSection(sectionId);
-  };
-
+import Login from "/password/login"; // Ajusta el import según la ubicación real del archivo
+import "./login.css";
+const LoginPage = () => {
   return (
-    <div style={{ fontFamily: "Arial, sans-serif", margin: 0, padding: 0 }}>
-      {/* Barra superior adicional */}
-      <div
-        style={{
-          backgroundColor: "#FFA500", // Color de fondo para la nueva barra
-          color: "#fff", // Texto en blanco
-          padding: "10px 20px", // Espaciado interno
-          textAlign: "center", // Centrar el texto en la barra
-          fontSize: "16px", // Tamaño de fuente
-        }}
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+        backgroundColor: "#f0f4f8",
+        fontFamily: "'Arial', sans-serif",
+        padding: "10px",
+      }}
+    >
+      <div className="box_login"
       >
-       <img
-          src= "/icono.jpg"
-          alt="Logo"
-          style={{ height: "40px", width: "auto" }} // Ajusta el tamaño de la imagen
-        />
-        {/* Texto centrado */}
-        <div style={{ flex: 1, textAlign: "center" }}>
-          Contactanos al 800 900 700
-        </div>
-  
-      </div>
-
-      {/* Barra de navegación */}
-      <div className="NavBar-Blue"
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          borderBottom: "1px solid #ddd",
-          position: "sticky",
-          top: 0,
-          zIndex: 1000,
-          width: "100%", 
-          boxSizing: "border-box",
-        }}
-      >
-    
-        <div style={{ display: "flex", gap: "" }}>
-          <button
-            style={{
-              padding: "10px 20px",
-              backgroundColor: "#007BFF",
-              color: "#fff",
-              border: "none",
-              borderRadius: "5px",
-              cursor: "pointer",
-            }}
-            onClick={() => showContent("vih")}
-          >
-            Todo sobre el VIH
-          </button>
-          <button
-            style={{
-              padding: "10px 20px",
-              backgroundColor: "#007BFF",
-              color: "#fff",
-              border: "none",
-              borderRadius: "5px",
-              cursor: "pointer",
-            }}
-            onClick={() => showContent("programas")}
-          >
-            Programas y servicios
-          </button>
-          <button
-            style={{
-              padding: "10px 20px",
-              backgroundColor: "#007BFF",
-              color: "#fff",
-              border: "none",
-              borderRadius: "5px",
-              cursor: "pointer",
-            }}
-            onClick={() => showContent("quienes")}
-          >
-            Quienes Somos
-          </button>
-          <button
+        <h1
           style={{
-          padding: "10px 20px",
-          backgroundColor: "#007BFF",
-          color: "#fff",
-         border: "none",
-         borderRadius: "5px",
-         cursor: "pointer",
-        }}
-        onClick={() =>
-           (window.location.href = "/password/login")
-        }
-         >
-           Ingreso
-        </button>
-        <button
+            color: "#333",
+            fontSize: "2rem",
+            marginBottom: "20px",
+          }}
+        >
+          Bienvenido A Faivil
+        </h1>
+        <h5
           style={{
-          padding: "10px 20px",
-          backgroundColor: "#007BFF",
-          color: "#fff",
-         border: "none",
-         borderRadius: "5px",
-         cursor: "pointer",
-        }}
-        onClick={() =>
-           (window.location.href = "/password/signup")
-        }
-         >
-           Registro
-        </button>
-  
+            color: "#555",
+            fontSize: "1.2rem",
+            marginBottom: "20px",
+          }}
+        >
+          Si tiene cuenta, seleccione el botón de Login
+        </h5>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "10px", // Espaciado entre botones
+            marginBottom: "20px",
+          }}
+        >
+          <button
+            style={{
+              padding: "10px 20px",
+              fontSize: "1rem",
+              color: "#fff",
+              backgroundColor: "#007BFF",
+              border: "none",
+              borderRadius: "5px",
+              cursor: "pointer",
+              boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+            }}
+            onClick={() => (window.location.href = "/password/login")}
+          >
+            Login
+          </button>
         </div>
-      </div>
-
-      
-     {/* Contenido dinámico */}
-     <div style={{ padding: "20px", maxWidth: "1200px", margin: "0 auto", textAlign: "center" }}>
-        {activeSection === "vih" && (
-          <div>
-            <h1>Todo sobre el VIH</h1>
-            <p>Información completa sobre el VIH.</p>
-          </div>
-        )}
-        {activeSection === "programas" && (
-          <div>
-            <h1>Programas y servicios</h1>
-            <p>Detalles de programas y servicios ofrecidos.</p>
-          </div>
-        )}
-        {activeSection === "quienes" && (
-          <div>
-            <h1>Quienes Somos</h1>
-            <p>Información sobre nuestra organización.</p>
-          </div>
-        )}
-        {activeSection === "home" && (
-          <div>
-            <h1>Reserva tu cita</h1>
-            <p>Bienvenido al sistema de reservas.</p>
-          </div>
-        )}
+        <h5
+          style={{
+            color: "#555",
+            fontSize: "1.2rem",
+            marginBottom: "20px",
+          }}
+        >
+          Si no tiene cuenta, seleccione Signup
+        </h5>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "10px", // Espaciado entre botones
+          }}
+        >
+          <button
+            style={{
+              padding: "10px 20px",
+              fontSize: "1rem",
+              color: "#fff",
+              backgroundColor: "#007BFF",
+              border: "none",
+              borderRadius: "5px",
+              cursor: "pointer",
+              boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+            }}
+            onClick={() => (window.location.href = "/password/signup")}
+          >
+            Signup
+          </button>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Page;
-
-
-
+export default LoginPage;

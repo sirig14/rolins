@@ -1,9 +1,10 @@
 "use client" ;
-
+import 'react-calendar/dist/Calendar.css';
 import React, { useState } from "react";
 import "./home.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-const Pagina = () => {
+import CalendarWithForm from "@/components/CalendarWithForm";
+const Page = () => {
   // Estado para manejar la sección activa
   const [activeSection, setActiveSection] = useState("home");
 
@@ -146,14 +147,17 @@ const Pagina = () => {
             <p>Bienvenido al sistema de reservas.</p>
           </div>
         )}
-        
+        <section id="calendario">
+          {/* Aquí se integra el calendario */}
+          <CalendarWithForm />
+        </section>
         
       </div>
     </div>
   );
 };
 
-export default Pagina;
+export default Page;
 
 
 

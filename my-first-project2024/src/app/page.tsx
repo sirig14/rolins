@@ -27,6 +27,11 @@ const LoginPage = () => {
         >
           Bienvenido A Faivil
         </h1>
+        <img
+          src= "/icono.jpg"
+          alt="Logo"
+          style={{ height: "40px", width: "auto" }} // Ajusta el tamaño de la imagen
+        />
         <h5
           style={{
             color: "#555",

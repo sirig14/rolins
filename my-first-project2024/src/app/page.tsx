@@ -30,7 +30,10 @@ const LoginPage = () => {
         <img
           src= "/icono.jpg"
           alt="Logo"
-          style={{ height: "40px", width: "auto" }} // Ajusta el tamaño de la imagen
+          style={{ height: "40px",
+            width: "auto",
+            display: "block",
+            margin: "0 auto"}} // Ajusta el tamaño de la imagen
         />
         <h5
           style={{

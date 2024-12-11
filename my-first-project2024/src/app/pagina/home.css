@@ -1,12 +1,14 @@
 .NavBar-Blue
 {
-  padding: 10px 400px;
+  padding: 10px 378px;
   background-color: #007BFF;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
     .NavBar-Blue
     {
-      padding: 5px;
+      justify-content: space-between;
+      align-content: center;
+      padding: 10px 1000px;
     }
   }

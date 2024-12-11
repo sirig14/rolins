@@ -32,7 +32,7 @@ const Page = () => {
         />
         {/* Texto centrado */}
         <div style={{ flex: 1, textAlign: "center" }}>
-          Contactanos al 800 900 700
+          Contactanos al 📞 800 900 700
         </div>
   
       </div>
@@ -105,6 +105,19 @@ const Page = () => {
           >
             Contactos 
           </button>
+          <button
+            style={{
+              padding: "10px 20px",
+              backgroundColor: "#007BFF",
+              color: "#fff",
+              border: "none",
+              borderRadius: "5px",
+              cursor: "pointer",
+            }}
+            onClick={() => showContent("Reserva")}
+          >
+            Reserva
+          </button>
         
       
   
@@ -141,16 +154,27 @@ const Page = () => {
             <p>nuestras oficinas estan en calle cualquiera #1111</p>
           </div>
         )}
+        {activeSection === "Reserva" && (
+          <div>
+            <h1>Reserva tu cita</h1>
+            <p>Bienvenido al sistema de reservas.</p>
+            <section id="calendario">
+          {/* Aquí se integra el calendario */}
+          <CalendarWithForm />
+        </section>
+          </div>
+        )}
         {activeSection === "home" && (
           <div>
             <h1>Reserva tu cita</h1>
             <p>Bienvenido al sistema de reservas.</p>
-          </div>
-        )}
-        <section id="calendario">
+            <section id="calendario">
           {/* Aquí se integra el calendario */}
           <CalendarWithForm />
         </section>
+          </div>
+        )}
+        
         
       </div>
     </div>

@@ -1,0 +1,35 @@
+{
+    "home": {
+      "contacto_navbar":"Contactanos al 📞 800 900 700",
+      "vih": {
+        "titulo": "Todo sobre el VIH",
+        "informacion": "Información completa sobre el VIH.",
+        "chat":"Chat con CHAT GPT",
+        "placeholder": "Escribe tu mensaje..."
+      },
+      "programas":{
+        "titulo": "Programas y servicios",
+        "detalles": "Detalles de programas y servicios ofrecidos."
+      },
+      "quienes_somos":{
+        "titulo": "Quienes somos",
+        "informacion_titulo": "Información sobre nuestra organización."
+      },
+      "contacto":{
+        "titulo":"Contactos",
+        "wsp": "Hablanos al whatsapp +5699999999.",
+        "correo_soporte": "Correo de Soporte: favil.soporte@favil.cl",
+        "correo_apoyo": "Correo de Apoyo: favil.Apoyo@gmail.com",
+        "direccion": "Nuestras oficinas estan en calle cualquiera #1111"
+      },
+      "reserva":{
+        "titulo": "Reserva tu cita",
+        "bienvenida": "Bienvenido al sistema de reservas.",
+        "calendario": "Calendario interactivo",
+        "nombre": "Nombre ",
+        "apellido": "Apellido",
+        "telefono": "Telefono"
+      }
+
+    }
+  }

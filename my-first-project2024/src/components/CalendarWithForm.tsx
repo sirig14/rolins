@@ -5,6 +5,8 @@ import Calendar from "react-calendar";
 import { useForm } from "react-hook-form";
 import "react-calendar/dist/Calendar.css";
 import "../styles/style.css"; // Importa tus estilos personalizados
+import { useTranslation } from 'react-i18next';
+//import '../../lib/i18n';
 
 const CalendarWithForm = () => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
@@ -19,9 +21,11 @@ const CalendarWithForm = () => {
     setSelectedDate(null); // Reinicia el formulario
   };
 
+  const { t, i18n } = useTranslation('common');
+
   return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "20px" }}>
-      <h1>Calendario Interactivo</h1>
+      <h1>{t('home.reserva.calendario')}</h1>
 
       {/* Calendario */}
       <Calendar onClickDay={onDateChange} />
@@ -33,7 +37,7 @@ const CalendarWithForm = () => {
           <form onSubmit={handleSubmit(onSubmit)}>
             {/* Campo Nombre */}
             <div>
-              <label htmlFor="nombre">Nombre:</label>
+              <label htmlFor="nombre">{t('home.reserva.nombre')}</label>
               <input
                 id="nombre"
                 {...register("nombre", { required: "El nombre es obligatorio" })}
@@ -43,7 +47,7 @@ const CalendarWithForm = () => {
 
             {/* Campo Apellido */}
             <div>
-              <label htmlFor="apellido">Apellido:</label>
+              <label htmlFor="apellido">{t('home.reserva.apellido')}</label>
               <input
                 id="apellido"
                 {...register("apellido", { required: "El apellido es obligatorio" })}
@@ -53,7 +57,7 @@ const CalendarWithForm = () => {
 
             {/* Campo Teléfono */}
             <div>
-              <label htmlFor="telefono">Teléfono:</label>
+              <label htmlFor="telefono">{t('home.reserva.telefono')}</label>
               <input
                 id="telefono"
                 {...register("telefono", {
